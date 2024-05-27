@@ -182,10 +182,10 @@ jobs:
     - name: Build kernel
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
-        export PATH=$GITHUB_WORKSPACE/kernel_workspace/clang-aosp/bin:$PATH
+        export PATH=$GITHUB_WORKSPACE/kernel_workspace/clang-aosp/proton-clang-20200307/bin:$PATH
         export KBUILD_BUILD_HOST=Github-Action
         export KBUILD_BUILD_USER=$(echo ${{ github.actor }} | tr A-Z a-z)
-        export CPATH=$GITHUB_WORKSPACE/kernel_workspace/clang-aosp/
+        export CPATH=$GITHUB_WORKSPACE/kernel_workspace/clang-aosp/proton-clang-20200307/bin
         echo "5678"
         cd ..
         echo "Current directory: $(pwd)"
