@@ -190,6 +190,7 @@ jobs:
         cd $CPATH
         echo "Current directory: $(pwd)"
         ls
+        cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
         if [ ! -z ${{ env.KSU_EXPECTED_SIZE }} ] && [ ! -z ${{ env.KSU_EXPECTED_HASH }} ]; then
           export KSU_EXPECTED_SIZE=${{ env.KSU_EXPECTED_SIZE }}
           export KSU_EXPECTED_HASH=${{ env.KSU_EXPECTED_HASH }}
