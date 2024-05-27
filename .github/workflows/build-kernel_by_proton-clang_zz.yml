@@ -77,19 +77,19 @@ jobs:
       if: env.ENABLE_PROTON_CLANG == 'true'
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
-        if [[ ${{ env.PROTON_CLANG_SOURCE }} =~ git ]]; then
-            if [[ ${{ env.PROTON_CLANG_SOURCE }} == *'.tar.gz' ]]; then
-                wget -O clang.tar.gz ${{ env.PROTON_CLANG_SOURCE }}
-                mkdir clang-aosp
-                tar -C clang-aosp/ -zxvf clang.tar.gz
-            else
-                git clone ${{ env.PROTON_CLANG_SOURCE }} -b ${{ env.PROTON_CLANG_BRANCH }} clang-aosp --depth=1
-            fi        
-        else
-            wget -O clang.zip ${{ env.PROTON_CLANG_SOURCE }}
-            mkdir clang-aosp
-            unzip clang.zip -d clang-aosp/
-        fi
+        # if [[ ${{ env.PROTON_CLANG_SOURCE }} =~ git ]]; then
+        #     if [[ ${{ env.PROTON_CLANG_SOURCE }} == *'.tar.gz' ]]; then
+        #         wget -O clang.tar.gz ${{ env.PROTON_CLANG_SOURCE }}
+        #         mkdir clang-aosp
+        #         tar -C clang-aosp/ -zxvf clang.tar.gz
+        #     else
+        #         git clone ${{ env.PROTON_CLANG_SOURCE }} -b ${{ env.PROTON_CLANG_BRANCH }} clang-aosp --depth=1
+        #     fi        
+        # else
+        wget -O clang.zip ${{ env.PROTON_CLANG_SOURCE }}
+        mkdir clang-aosp
+        unzip clang.zip -d clang-aosp/
+        #fi
         
 
     - name: Download mkbootimg tools
