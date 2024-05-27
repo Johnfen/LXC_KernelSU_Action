@@ -187,7 +187,6 @@ jobs:
         export KBUILD_BUILD_USER=$(echo ${{ github.actor }} | tr A-Z a-z)
         echo "CPATH=/home/runner/work/LXC_KernelSU_Action/LXC_KernelSU_Action/kernel_workspace/clang-aosp/bin" >> $GITHUB_ENV
         echo "5678"
-        cd $CPATH
         echo "Current directory: $(pwd)"
         ls
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
