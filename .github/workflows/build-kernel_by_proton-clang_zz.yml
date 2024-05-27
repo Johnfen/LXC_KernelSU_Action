@@ -186,9 +186,10 @@ jobs:
         export KBUILD_BUILD_HOST=Github-Action
         export KBUILD_BUILD_USER=$(echo ${{ github.actor }} | tr A-Z a-z)
         echo "CPATH=$GITHUB_WORKSPACE/kernel_workspace/clang-aosp/bin" >> $GITHUB_ENV
-        echo "1234"
-        echo $CPATH
-        ls $CPATH
+        echo "5678"
+        cd $CPATH
+        echo "Current directory: $(pwd)"
+        ls
         if [ ! -z ${{ env.KSU_EXPECTED_SIZE }} ] && [ ! -z ${{ env.KSU_EXPECTED_HASH }} ]; then
           export KSU_EXPECTED_SIZE=${{ env.KSU_EXPECTED_SIZE }}
           export KSU_EXPECTED_HASH=${{ env.KSU_EXPECTED_HASH }}
