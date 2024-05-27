@@ -187,6 +187,7 @@ jobs:
         export KBUILD_BUILD_USER=$(echo ${{ github.actor }} | tr A-Z a-z)
         export CPATH=$GITHUB_WORKSPACE/kernel_workspace/clang-aosp/bin
         echo "5678"
+        cd ..
         echo "Current directory: $(pwd)"
         ls
         cd $CPATH
